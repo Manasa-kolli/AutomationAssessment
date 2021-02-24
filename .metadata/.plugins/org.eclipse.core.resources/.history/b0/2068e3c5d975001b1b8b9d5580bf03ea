@@ -1,0 +1,126 @@
+package com.capgemini.Assementone;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+
+public class PersonalInformationPage {
+	
+	/*
+	 * Title x-path
+	 */
+	@FindBy(xpath="(//span//input[@type='radio'])[1]")
+	WebElement title;
+	
+	/*
+	 * first name x-path
+	 */
+	@FindBy(xpath="//input[@id='customer_firstname']")
+	WebElement first;
+	
+	/*
+	 * last name x-path
+	 */
+      @FindBy(xpath="//input[@id='customer_lastname']")	
+	   WebElement last;
+      
+      /*
+       * password x-path
+       */
+      @FindBy(xpath="//input[@id='passwd']")
+      WebElement password;
+      
+      /*
+       * day x-path
+       */
+      @FindBy(xpath="//select[@id='days']")
+      WebElement day;
+      
+      /*
+       * month x-path
+       */
+      @FindBy(xpath="//select[@id='months']")
+      WebElement month;
+      
+      /*
+       * year x-path
+       */
+      @FindBy(xpath="//select[@id='years']")
+      WebElement year;
+      
+      /*
+       * Sign-up check-box
+       */
+      @FindBy(xpath="//input[@id='newsletter']")
+      WebElement newLetter;
+      
+	/*
+	 * constructor
+	 */
+	public PersonalInformationPage(WebDriver driver) {
+		PageFactory.initElements(driver,this);
+		
+	}
+	
+	/*
+	 * by the of this method we can click on radio button
+	 */
+	public void title() {
+		title.click();
+	}
+	
+	/*
+	 * by the help of this method we can enter first name
+	 */
+	public void firstName(String Fname) {
+		first.sendKeys(Fname);
+	}
+	
+	/*
+	 * by the help of this method we can enter last name
+	 */
+	public void lastName(String Lname) {
+		last.sendKeys(Lname);
+	}
+	
+	/*
+	 * by the help of this method we can click on password
+	 */
+	public void ePassword(String Enterpassword) {
+		password.sendKeys(Enterpassword);
+		}
+	
+	/*
+	 * by the help of this method we can click in day drop down 
+	 */
+	public void days() {
+		Select s=new Select(day);
+		s.selectByIndex(2);
+	}
+	
+	/*
+	 * by the help of this method we can click in month drop down
+	 */
+	public void months() {
+		Select s=new Select(month);
+		s.selectByIndex(3);
+	}
+	
+	/*
+	 * by the help of this method we can click on year drop down
+	 */
+	public void years() {
+		Select s =new Select(year);
+		s.selectByIndex(4);
+	}
+	
+	/*
+	 * by the help of this method we can click on check box of sign-up
+	 */
+	public void newLetters() {
+		newLetter.click();
+	}
+
+}

@@ -1,0 +1,73 @@
+package com.capgemini.Assementone;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class TestClass {
+	
+	static {
+		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		WebDriver driver=new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		driver.get("http://automationpractice.com/index.php");
+		//create an object for SigninPage class
+		SigninPage page=new SigninPage(driver);
+		//called the signinButton()
+		page.signinButton();
+		//called the emailId()
+		page.emailId("kolli.manasa123@gmail.com");
+		//called the createButton()
+		page.CreateButton();
+		
+		//create an object for personal information
+		PersonalInformationPage informationPage=new PersonalInformationPage(driver);
+		//called the title()
+		informationPage.title();
+		//called the firstName() 
+		informationPage.firstName("Manasa");
+		//called the lastName()
+		informationPage.lastName("Kolli");
+		//called the ePassword()
+		informationPage.ePassword("MANASA");
+		//called the days();
+		informationPage.days();
+		//called the months()
+		informationPage.months();
+		//called the  years()
+         informationPage.years();		
+		//called the newLetters()
+         informationPage.newLetters();
+         //called the companyName()
+         informationPage.companyName("Capgemini");
+         //called the addressOne()
+         informationPage.addressOne("Railwaystation,kp-street");
+         //called the addressTwoo()
+         informationPage.addressTwoo("street-No-20/21");
+         //called the cityName()
+         informationPage.cityName("Akividu");
+         //called the states()
+         informationPage.states();
+         //called the postalCode()
+         informationPage.postalCode("53423");
+         //called the additional()
+         informationPage.additional("None");
+         //called the homeNumber()
+         informationPage.homeNumber("255235");
+         //called the phoneNumber()
+         informationPage.phoneNumber("9100547980");
+         //called the furtherAddress()
+       informationPage.furtherAddress("same-Address");  
+       //called the registerButton()
+       informationPage.registerButton();
+		
+	}
+
+}

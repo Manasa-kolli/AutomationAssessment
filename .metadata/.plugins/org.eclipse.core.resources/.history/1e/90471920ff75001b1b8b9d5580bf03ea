@@ -1,0 +1,107 @@
+package com.capgemini.Assementone;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class AddProductToTheCard {
+	
+	/*
+	 * search item x-path
+	 */
+	@FindBy(xpath="//input[@id='search_query_top']")
+	WebElement searchitem;
+	/*
+	 * saerch button
+	 */
+	@FindBy(xpath="//button[@name='submit_search']")
+	WebElement search;
+	
+	/*
+	 * add to cart button x-path
+	 */
+	@FindBy(xpath="//span[text()='Add to cart']")
+	WebElement addToCart;
+	
+	/*
+	 * check-out x-path
+	 */
+	@FindBy(xpath="//span[contains(text(),'Proceed to checkout')]")
+	WebElement checkout;
+	
+	/*
+	 * 
+	 */
+     @FindBy(xpath="//a[@href='http://automationpractice.com/index.php?controller=order&step=1']")
+	WebElement check;
+     
+     /*
+      * 
+      */
+    @FindBy(xpath="//button[@name='processAddress']")
+    WebElement addressC;
+    
+    /*
+     * 
+     */
+   @FindBy(xpath="//input[@id='cgv']") 
+    WebElement  aggree;
+    
+    /*
+     * 
+     */
+    @FindBy(xpath="//button[@name='processCarrier']")
+    WebElement shipping;
+	
+	/*
+	 * constructor
+	 */
+    public AddProductToTheCard(WebDriver driver) {
+		PageFactory.initElements(driver, this);
+	}
+
+    /*
+     * by the help of this method we can click on add to cart
+     */
+    public void searchItem() {
+       searchitem.sendKeys("T-shirt");
+    }
+    
+    /*
+     * by the help of this method we can click on search item
+     */
+    public void searchClick() {
+    	search.click();
+    }
+    
+    /*
+     * by the help of this method we can click on add to card
+     */
+    public void addToCartItem() {
+    	addToCart.click();
+    }
+    
+    /*
+     * by the help of this method we can click on check out button
+     */
+    public void checkOutButton() {
+    	checkout.click();
+    }
+    
+  public void checkIn() {
+   check.click();
+   }
+  
+  public void addressCont() {
+	 addressC.click();
+  }
+  
+  public void agreeCheck() {
+	  aggree.click();
+  }
+  
+  public void shippingAdd() {
+	 shipping.click(); 
+  }
+}

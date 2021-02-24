@@ -1,0 +1,35 @@
+package com.capgemini.Assementone;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class PersonalInformationPage {
+	
+	/*
+	 * Title x-path
+	 */
+	@FindBy(xpath="(//span//input[@type='radio'])[1]")
+	WebElement title;
+	/*
+	 * constructor
+	 */
+	public PersonalInformationPage(WebDriver driver) {
+		PageFactory.initElements(driver,this);
+		
+	}
+	
+	/*
+	 * by the of this method we can click on radio button
+	 */
+	public void Title() {
+		title.click();
+	}
+	
+	
+	
+	
+	
+
+}

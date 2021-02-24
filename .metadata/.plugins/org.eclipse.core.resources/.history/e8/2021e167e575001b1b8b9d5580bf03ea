@@ -1,0 +1,29 @@
+package com.capgemini.Assementone;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class AddProductToTheCard {
+	
+	/*
+	 * add to cart product x-path
+	 */
+	@FindBy(xpath="(//span[text()='Add to cart'])[1]")
+	WebElement addToCart;
+	
+	/*
+	 * constructor
+	 */
+    public AddProductToTheCard(WebDriver driver) {
+		PageFactory.initElements(driver, this);
+	}
+
+    /*
+     * by the help of this method we can click on add to cart
+     */
+    public void addToCartIdea() {
+    	addToCart.click();
+    }
+}

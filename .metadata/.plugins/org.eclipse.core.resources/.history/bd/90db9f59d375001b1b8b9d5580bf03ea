@@ -1,0 +1,59 @@
+package com.capgemini.Assementone;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class PersonalInformationPage {
+	
+	/*
+	 * Title x-path
+	 */
+	@FindBy(xpath="(//span//input[@type='radio'])[1]")
+	WebElement title;
+	
+	/*
+	 * first name x-path
+	 */
+	@FindBy(xpath="//input[@id='customer_firstname']")
+	WebElement first;
+	
+	/*
+	 * last name x-path
+	 */
+      @FindBy(xpath="//input[@id='customer_lastname']")	
+	   WebElement last;
+	/*
+	 * constructor
+	 */
+	public PersonalInformationPage(WebDriver driver) {
+		PageFactory.initElements(driver,this);
+		
+	}
+	
+	/*
+	 * by the of this method we can click on radio button
+	 */
+	public void title() {
+		title.click();
+	}
+	
+	/*
+	 * by the help of this method we can enter first name
+	 */
+	public void firstName(String Fname) {
+		first.sendKeys(Fname);
+	}
+	
+	/*
+	 * by the help of this method we can enter last name
+	 */
+	public void lastName(String Lname) {
+		last.sendKeys(Lname);
+	}
+	
+	
+	
+
+}

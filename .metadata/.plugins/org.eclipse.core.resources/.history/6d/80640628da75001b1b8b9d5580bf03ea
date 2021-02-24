@@ -1,0 +1,192 @@
+package com.capgemini.Assementone;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+
+public class PersonalInformationPage {
+	
+	/*
+	 * Title x-path
+	 */
+	@FindBy(xpath="(//span//input[@type='radio'])[1]")
+	WebElement title;
+	
+	/*
+	 * first name x-path
+	 */
+	@FindBy(xpath="//input[@id='customer_firstname']")
+	WebElement first;
+	
+	/*
+	 * last name x-path
+	 */
+      @FindBy(xpath="//input[@id='customer_lastname']")	
+	   WebElement last;
+      
+      /*
+       * password x-path
+       */
+      @FindBy(xpath="//input[@id='passwd']")
+      WebElement password;
+      
+      /*
+       * day x-path
+       */
+      @FindBy(xpath="//select[@id='days']")
+      WebElement day;
+      
+      /*
+       * month x-path
+       */
+      @FindBy(xpath="//select[@id='months']")
+      WebElement month;
+      
+      /*
+       * year x-path
+       */
+      @FindBy(xpath="//select[@id='years']")
+      WebElement year;
+      
+      /*
+       * Sign-up check-box x-path
+       */
+      @FindBy(xpath="//input[@id='newsletter']")
+      WebElement newLetter;
+    
+      /*
+       * company text x-path
+       */
+      @FindBy(xpath="//input[@id='company']")
+      WebElement company;
+      
+      /*
+       * address-1 x-path
+       */
+      @FindBy(xpath="//input[@id='address1']")
+      WebElement address;
+      
+      /*
+       * address-2 x-path
+       */
+      @FindBy(xpath="//input[@id='address2']")
+      WebElement addressTwo;
+      
+      /*
+       * city x-path
+       */
+      @FindBy(xpath="//input[@id='city']")
+      WebElement city;
+      
+      /*
+       * state x-path
+       */
+      @FindBy(xpath="//input[@id='id_state']")
+      WebElement state;
+      
+      
+	/*
+	 * constructor
+	 */
+	public PersonalInformationPage(WebDriver driver) {
+		PageFactory.initElements(driver,this);
+		
+	}
+	
+	/*
+	 * by the of this method we can click on radio button
+	 */
+	public void title() {
+		title.click();
+	}
+	
+	/*
+	 * by the help of this method we can enter first name
+	 */
+	public void firstName(String Fname) {
+		first.sendKeys(Fname);
+	}
+	
+	/*
+	 * by the help of this method we can enter last name
+	 */
+	public void lastName(String Lname) {
+		last.sendKeys(Lname);
+	}
+	
+	/*
+	 * by the help of this method we can click on password
+	 */
+	public void ePassword(String Enterpassword) {
+		password.sendKeys(Enterpassword);
+		}
+	
+	/*
+	 * by the help of this method we can click in day drop down 
+	 */
+	public void days() {
+		Select s=new Select(day);
+		s.selectByIndex(2);
+	}
+	
+	/*
+	 * by the help of this method we can click in month drop down
+	 */
+	public void months() {
+		Select s=new Select(month);
+		s.selectByIndex(3);
+	}
+	
+	/*
+	 * by the help of this method we can click on year drop down
+	 */
+	public void years() {
+		Select s =new Select(year);
+		s.selectByIndex(4);
+	}
+	
+	/*
+	 * by the help of this method we can click on check box of sign-up
+	 */
+	public void newLetters() {
+		newLetter.click();
+	}
+	
+	/*
+	 * by the help of this method we can enter the company name
+	 */
+	public void companyName() {
+		company.click();
+	}
+	
+	/*
+	 * by the help of this method we can enter the address
+	 */
+	public void addressOne(String addOne) {
+		address.sendKeys(addOne);
+	}
+	
+	/*
+	 * by the help of this method we can enter the address two
+	 */
+     public void addressTwoo(String addTwo) {
+    	 addressTwo.sendKeys(addTwo);
+     }
+     
+     /*
+      * by the help of this method we can enter the city name
+      */
+     public void cityName(String Name) {
+    	 city.sendKeys(Name);
+     }
+     
+     /*
+      * by the help of this method we can click on  state drop down
+      */
+     public void states() {
+ 		Select s =new Select(state);
+ 		s.selectByIndex(14);
+ 	}
+}
